@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QComboBox, QPushButton, QAppli
 from PyQt5 import uic
 
 class MainWindows(QMainWindow):
-    def __init__(self):
+    def __init__(self, file :dict):
         super(MainWindows, self).__init__()
         #read ui
         uic.loadUi('./views/MainView.ui', self)
@@ -15,8 +15,8 @@ class MainWindows(QMainWindow):
         #do something
         self.button_next.clicked.connect(self.NextView)
 
-        self.combo_type_content.addItem("Archivo")
-        self.combo_type_content.addItem("Api")
+        for f in file["tipo de contenido"] :
+            self.combo_type_content.addItem(f)
 
         #show the app
         self.show()
@@ -24,6 +24,3 @@ class MainWindows(QMainWindow):
     def NextView(self):
         print("entro")
 
-app = QApplication(sys.argv)
-UIWindows = MainWindows()
-app.exec_()

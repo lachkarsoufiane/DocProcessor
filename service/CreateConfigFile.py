@@ -1,8 +1,23 @@
 from interface.ICreateConfig import ICreateConfig
+from PyQt5.QtWidgets import QApplication
+from views.MainWindows import MainWindows
+import sys
+
+
 class CreateConfigFile(ICreateConfig):
     
 
     def create_strategy_config(data) -> dict:
+        
+        json_file = {"tipo de contenido": [
+				"Archivo",
+				"Api"
+        ]}
+
+        app = QApplication(sys.argv)
+        UIWindows = MainWindows(json_file)
+        app.exec_()
+
         data['strategy'] = []
         print("Introduce los datos de configuración:")
         reader = input("¿Como quieres leer los datos?\n1- Consola\n2- Archivo\n")
