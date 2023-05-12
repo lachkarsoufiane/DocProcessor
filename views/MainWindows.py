@@ -1,4 +1,3 @@
-import sys
 from PyQt5.QtWidgets import QMainWindow, QWidget, QComboBox, QPushButton, QApplication
 from PyQt5 import uic
 
@@ -14,13 +13,15 @@ class MainWindows(QMainWindow):
 
         #do something
         self.button_next.clicked.connect(self.NextView)
-
-        for f in file["tipo de contenido"] :
-            self.combo_type_content.addItem(f)
+        self.add_content(self.combo_type_content, file)
 
         #show the app
         self.show()
 
     def NextView(self):
         print("entro")
+
+    def add_content(self, element, json_file):
+        for f in json_file["tipo de contenido"] :
+            element.addItem(f)
 
