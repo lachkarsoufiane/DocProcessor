@@ -1,0 +1,10 @@
+{
+    "strategy_config":{
+        "reader" : 1,
+        "printer":2
+    },
+    "conf_file":{
+        "file_path" : "./files/test_file.pdf",
+        "page_number" : 1
+    }
+}
