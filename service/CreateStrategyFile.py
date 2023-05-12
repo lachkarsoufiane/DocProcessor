@@ -25,4 +25,4 @@ class CreateStrategyFile():
             "Archivo" : ConsoleReaderStrategy,
             "Api" : PDFTextReaderStrategy
         }
-        return switch.get(num, ConsoleReaderStrategy)
+        return switch.get(num, PDFTextReaderStrategy)
