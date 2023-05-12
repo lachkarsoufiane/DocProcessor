@@ -22,6 +22,6 @@ class MainWindows(QMainWindow):
         print("entro")
 
     def add_content(self, element, json_file):
-        for f in json_file["tipo de contenido"] :
+        for f in json_file["content_type"] :
             element.addItem(f)
 
