@@ -63,7 +63,7 @@ class NextPage(QDialog):
         self.add_content(self.combo_file_types, 'file_type', self.content)
         self.add_content(self.combo_export_format, 'export_format', self.content)
 
-        self.file_button.clicked.connect(self.onInputFileButtonClicked)
+        self.file_button.clicked.connect(self.file_navigation)
 
     
     def add_content(self, element :object, key, input_file):
