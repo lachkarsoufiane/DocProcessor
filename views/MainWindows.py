@@ -33,7 +33,7 @@ class MainWindows(QDialog):
         self.content = self.combo_type_content.currentText()
         next_page = NextPage(input_file)
         widget.addWidget(next_page)
-        widget.setFixedHeight(400)
+        widget.setFixedHeight(430)
         widget.setFixedWidth(550)
         widget.setCurrentIndex(widget.currentIndex()+1)
         return self.content
@@ -71,6 +71,7 @@ class NextPage(QDialog):
             element.addItem(content)
     
     def onInputFileButtonClicked(self):
-        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Open file', directory='.', filter='*.pdf')
+        extention = '*.'+self.combo_file_types.currentText().lower()
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Importar Fichero', directory='.', filter=extention)
         if filename:
             self.file_path.setText(filename)

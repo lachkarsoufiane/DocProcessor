@@ -93,6 +93,9 @@ border-color: rgb(0, 0, 0);</string>
       <pointsize>10</pointsize>
      </font>
     </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>IBeamCursor</cursorShape>
+    </property>
    </widget>
    <widget class="QComboBox" name="export_format">
     <property name="geometry">
@@ -139,6 +142,9 @@ border-color: rgb(0, 0, 0);</string>
       <width>211</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
@@ -220,6 +226,9 @@ background-color: rgb(0, 30, 210);</string>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
