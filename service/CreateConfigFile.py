@@ -1,7 +1,4 @@
 from interface.ICreateConfig import ICreateConfig
-from PyQt5.QtWidgets import QApplication
-from views.MainWindows import MainWindows
-import sys
 import json
 
 class CreateConfigFile(ICreateConfig):
@@ -9,14 +6,6 @@ class CreateConfigFile(ICreateConfig):
 
     def create_strategy_config(data) -> dict:
         
-        json_file = open("configuration\inputs.json", "r")
-        json_file = json_file.read()
-        json_content = json.loads(json_file)
-
-        app = QApplication(sys.argv)
-        UIWindows = MainWindows(json_content)
-        app.exec_()
-
         data['strategy'] = []
         print("Introduce los datos de configuración:")
         reader = input("¿Como quieres leer los datos?\n1- Consola\n2- Archivo\n")

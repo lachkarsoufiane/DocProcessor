@@ -1,6 +1,21 @@
 {
-	"tipo de contenido": [
+	"content_type": [
 				"Archivo",
 				"Api"
-    ]
+    ],
+	"archivo":{
+		"file_type": [
+			"PDF",
+			"Excel",
+			"Txt"
+		],
+		"file_path": "",
+		"export_format" : [
+			"Excel",
+			"Consola"
+		]
+	},
+	"api":{
+		"url": ""
+	}
 }
