@@ -82,10 +82,11 @@ class NextPage(QDialog):
     
     def on_submit(self):
         file_type = self.combo_file_types.currentText().lower()
-        file_path = self.file_path.setPlainText("")
+        file_path = self.file_path.toPlainText()
         exporter = self.combo_export_format.currentText().lower()
         Processor(self.save_config_file(file_type, file_path, exporter))
 
+    
     def save_config_file(self, file_type :str, file_path :str, exporter :str):
         data = {}
         data["strategy_config"] = {}

@@ -15,8 +15,8 @@ class CreateStrategyFile():
     
     def find_printer(num: int):
         switch = {
-            "excel" : ConsolePrinterStrategy,
-            "consola" : FilePrinterStrategy
+            "consola" : ConsolePrinterStrategy,
+            "texto" : FilePrinterStrategy
         }
         return switch.get(num, ConsolePrinterStrategy)
     
@@ -27,4 +27,3 @@ class CreateStrategyFile():
         }
         return switch.get(num, PDFTextReaderStrategy)
 
-    
