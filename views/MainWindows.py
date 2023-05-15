@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QComboBox, QPushButton, QAppli
 from PyQt5 import QtWidgets, QtGui
 from PyQt5 import QtCore, uic
 
+from Processor import Processor
+
 
 class MainWindows(QDialog):
 
@@ -63,15 +65,35 @@ class NextPage(QDialog):
         self.add_content(self.combo_file_types, 'file_type', self.content)
         self.add_content(self.combo_export_format, 'export_format', self.content)
 
-        self.file_button.clicked.connect(self.onInputFileButtonClicked)
+        self.file_button.clicked.connect(self.file_navigation)
+        self.button_next.clicked.connect(self.on_submit)
 
     
     def add_content(self, element :object, key, input_file):
         for content in input_file[key]:
             element.addItem(content)
     
-    def onInputFileButtonClicked(self):
+    def file_navigation(self):
         extention = '*.'+self.combo_file_types.currentText().lower()
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Importar Fichero', directory='.', filter=extention)
         if filename:
             self.file_path.setText(filename)
+    
+    def on_submit(self):
+        file_type = self.combo_file_types.currentText().lower()
+        file_path = self.file_path.setPlainText("")
+        exporter = self.combo_export_format.currentText().lower()
+        Processor(self.save_config_file(file_type, file_path, exporter))
+
+    def save_config_file(self, file_type :str, file_path :str, exporter :str):
+        data = {}
+        data["strategy_config"] = {}
+        data["conf_file"] = {}
+
+        data["strategy_config"]["file_type"] = file_type
+        data["strategy_config"]["exporter"] = exporter
+        data["conf_file"]["file_path"] = file_path
+        data["conf_file"]["page_number"] = 1
+
+
+        return data

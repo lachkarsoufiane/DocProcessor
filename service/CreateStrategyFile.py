@@ -6,23 +6,25 @@ from strategy.PossibleStrategy import PossibleStrategy
 
 class CreateStrategyFile():
     def create(config: dict):
-        config = config['strategy'][0]
-        reader = CreateStrategyFile.find_reader(config['reader'])
-        printer = CreateStrategyFile.find_printer(config['printer'])
-        print(f"Estrategia: {reader}, {printer}")
+        config = config['strategy_config']
+        file_type = CreateStrategyFile.find_reader(config['file_type'].lower())
+        exporter = CreateStrategyFile.find_printer(config['exporter'].lower())
+        print(f"Estrategia: {file_type}, {exporter}")
 
-        return PossibleStrategy(reader, printer)
+        return PossibleStrategy(file_type, exporter)
     
     def find_printer(num: int):
         switch = {
-            "Archivo" : ConsolePrinterStrategy,
-            "Api" : FilePrinterStrategy
+            "excel" : ConsolePrinterStrategy,
+            "consola" : FilePrinterStrategy
         }
         return switch.get(num, ConsolePrinterStrategy)
     
     def find_reader(num: int):
         switch = {
-            "Archivo" : ConsoleReaderStrategy,
-            "Api" : PDFTextReaderStrategy
+            "text" : ConsoleReaderStrategy,
+            "pdf" : PDFTextReaderStrategy
         }
         return switch.get(num, PDFTextReaderStrategy)
+
+    

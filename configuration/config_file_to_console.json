@@ -1,7 +1,7 @@
 {
     "strategy_config":{
-        "reader" : 1,
-        "printer":2
+        "file_type" : "pdf",
+        "exporter": "excel"
     },
     "conf_file":{
         "file_path" : "./files/test_file.pdf",
