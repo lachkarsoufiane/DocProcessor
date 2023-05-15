@@ -4,11 +4,11 @@
 				"Api"
     ],
 	"archivo":{
-		"file_type": [
-			"PDF",
-			"Excel",
-			"Txt"
-		],
+		"file_type": {
+			"PDF" : "pdf",
+			"Excel" : "xlsx",
+			"Texto" : "txt"
+	},
 		"file_path": "",
 		"export_format" : [
 			"Excel",
