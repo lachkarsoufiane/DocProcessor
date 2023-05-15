@@ -71,7 +71,8 @@ class NextPage(QDialog):
             element.addItem(content)
     
     def onInputFileButtonClicked(self):
-        extention = '*.'+self.combo_file_types.currentText().lower()
+        input = self.combo_file_types.currentText()
+        extention = '*.' + self.content["file_type"][input]
         filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Importar Fichero', directory='.', filter=extention)
         if filename:
             self.file_path.setText(filename)

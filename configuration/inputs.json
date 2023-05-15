@@ -12,7 +12,8 @@
 		"file_path": "",
 		"export_format" : [
 			"Excel",
-			"Consola"
+			"Consola",
+			"Texto"
 		]
 	},
 	"api":{
