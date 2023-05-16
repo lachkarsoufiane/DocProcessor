@@ -54,11 +54,12 @@ class FileInformation(QDialog):
         file_path = self.file_path.toPlainText()
         exporter = self.combo_export_format.currentText().lower()
 
-        window = AdvancedInformation(input_file, widget)
+        result_file = self.save_config_file(file_type, file_path, exporter)
+
+        window = AdvancedInformation(input_file, result_file, widget)
         width = 560
         height = 325
         self.open_window(window, widget, width, height)
-        Processor(self.save_config_file(file_type, file_path, exporter))
 
     def get_back(self, widget):
         widget.setFixedHeight(260)
@@ -82,13 +83,22 @@ class FileInformation(QDialog):
 
         json_path = "./configuration/configuration_file.json"
         json_file = ConfigurationFile.import_file(json_path)
+        print()
         to_check = ["strategy_config", "conf_file"]
         
-        if(ConfigurationFile.check_structure(json_file, to_check)):
-            json_file["strategy_config"]["file_type"] = file_type
-            json_file["strategy_config"]["exporter"] = exporter
-            json_file["conf_file"]["file_path"] = file_path
-            json_file["conf_file"]["page_number"] = 3
-            # Guardamos el fichero
-            ConfigurationFile.save_file(json_file, json_path)
+        if not ConfigurationFile.check_existence(json_path):
+            json_file = ConfigurationFile.create_file()
+
+
+        if not ConfigurationFile.check_structure(json_file, to_check):
+            json_file = ConfigurationFile.create_file()
+
+
+        json_file["strategy_config"]["file_type"] = file_type
+        json_file["strategy_config"]["exporter"] = exporter
+        json_file["conf_file"]["file_path"] = file_path
+        json_file["conf_file"]["page_number"] = 3
+
+        # Guardamos el fichero
+        ConfigurationFile.save_file(content=json_file, file_path=json_path)
         return json_file
