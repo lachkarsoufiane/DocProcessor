@@ -5,8 +5,9 @@ class ParagraphKeywordSplitterStrategy(ISplitter):
 
     def split_content(content :str, config :dict):
 
-        start_keyword = config["start_keyword"]
-        end_keyword = config["end_keyword"]
+        config = config["conf_file"]
+        start_keyword = config["start_key"]
+        end_keyword = config["end_key"]
         end_keyword = start_keyword if end_keyword is None else end_keyword
 
         result = {}
@@ -35,6 +36,5 @@ class ParagraphKeywordSplitterStrategy(ISplitter):
                 result[index] = paragraph
             
         result = json.dumps(result)
-        print(result)
         
         return result

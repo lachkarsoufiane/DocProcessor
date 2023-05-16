@@ -37,7 +37,7 @@ class AdvancedInformation(QDialog):
         if file_kind == "dscc":
             start_key = "Document:"
 
-        result_file["conf_file"]["file_kind"] = file_kind
+        result_file["strategy_config"]["file_kind"] = file_kind
         result_file["conf_file"]["start_key"] = start_key
         Processor(result_file)
 

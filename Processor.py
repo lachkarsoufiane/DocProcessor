@@ -11,6 +11,6 @@ class Processor():
 
         # Leer el contenido del fichero requerido
         content = self.strategy.reader.read(config)
-        paragraphs = self.strategy.splitter.split_content(content, "Document:")
+        paragraphs = self.strategy.splitter.split_content(content, config)
         # Pintar el resultado
         self.strategy.printer.print(paragraphs, config)
