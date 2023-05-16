@@ -1,15 +1,15 @@
 from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtWidgets
 from views.MainWindows import MainWindows
+from service.ConfigurationFile import ConfigurationFile
 import sys
 import json
 
 if __name__ == "__main__":
     
     # Importar el fichero de opciones
-    json_file = open("configuration\inputs.json", "r")
-    json_file = json_file.read()
-    json_content = json.loads(json_file)
+    json_path = "configuration\inputs.json"
+    json_content = ConfigurationFile.import_file(json_path)
 
     # Inicializar la applicación
     app = QApplication(sys.argv)

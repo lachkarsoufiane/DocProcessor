@@ -14,6 +14,10 @@
 			"Excel",
 			"Consola",
 			"Texto"
+		],
+		"file_kind": [
+			"ESCC",
+			"DSCC"
 		]
 	},
 	"api":{

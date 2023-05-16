@@ -3,8 +3,12 @@ import json
 
 class ParagraphKeywordSplitterStrategy(ISplitter):
 
-    def split_content(content, start_keyword, end_keyword = None):
+    def split_content(content :str, config :dict):
+
+        start_keyword = config["start_keyword"]
+        end_keyword = config["end_keyword"]
         end_keyword = start_keyword if end_keyword is None else end_keyword
+
         result = {}
         paragraph = ""
         current_title = None

@@ -2,6 +2,8 @@ from service.ConsolePrinterStrategy import ConsolePrinterStrategy
 from service.FilePrinterStrategy import FilePrinterStrategy
 from service.ConsoleReaderStrategy import ConsoleReaderStrategy
 from service.PDFTextReaderStrategy import PDFTextReaderStrategy
+from service.ParagraphRegexSplitterStrategy import ParagraphRegexSplitterStrategy
+from service.ParagraphKeywordSplitterStrategy import ParagraphKeywordSplitterStrategy
 from strategy.PossibleStrategy import PossibleStrategy
 
 class CreateStrategyFile():
@@ -10,20 +12,27 @@ class CreateStrategyFile():
         config = config['strategy_config']
         file_type = CreateStrategyFile.find_reader(config['file_type'].lower())
         exporter = CreateStrategyFile.find_printer(config['exporter'].lower())
+        splitter = CreateStrategyFile.find_splitter(config['file_kind'].lower())
 
-        return PossibleStrategy(file_type, exporter)
+        return PossibleStrategy(file_type, splitter, exporter)
     
-    def find_printer(num: int):
-        switch = {
-            "consola" : ConsolePrinterStrategy,
-            "texto" : FilePrinterStrategy
-        }
-        return switch.get(num, ConsolePrinterStrategy)
-    
-    def find_reader(num: int):
+    def find_reader(key: str):
         switch = {
             "text" : ConsoleReaderStrategy,
             "pdf" : PDFTextReaderStrategy
         }
-        return switch.get(num, PDFTextReaderStrategy)
+        return switch.get(key, PDFTextReaderStrategy)
 
+    def find_splitter(key: str):
+        switch = {
+            "escc" : ParagraphRegexSplitterStrategy,
+            "dscc": ParagraphKeywordSplitterStrategy 
+        }
+        return switch.get(key, ParagraphKeywordSplitterStrategy)
+
+    def find_printer(key: str):
+        switch = {
+            "consola" : ConsolePrinterStrategy,
+            "texto" : FilePrinterStrategy
+        }
+        return switch.get(key, ConsolePrinterStrategy)
