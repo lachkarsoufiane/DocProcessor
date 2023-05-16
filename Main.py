@@ -1,19 +1,17 @@
-from Processor import Processor
 from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtWidgets
 from views.MainWindows import MainWindows
 import sys
 import json
-from service.CreateConfigFile import CreateConfigFile
 
 if __name__ == "__main__":
     
-    data = {}
-
+    # Importar el fichero de opciones
     json_file = open("configuration\inputs.json", "r")
     json_file = json_file.read()
     json_content = json.loads(json_file)
 
+    # Inicializar la applicación
     app = QApplication(sys.argv)
     widget = QtWidgets.QStackedWidget()
     main = MainWindows(json_content, widget)
@@ -27,6 +25,3 @@ if __name__ == "__main__":
         print("Saliendo")
 
 
-
-    # data = prueba.create_info_config(data)
-    # Processor(data)

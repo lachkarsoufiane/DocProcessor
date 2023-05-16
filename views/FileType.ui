@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>561</width>
-    <height>425</height>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,14 +19,20 @@
      <x>0</x>
      <y>0</y>
      <width>571</width>
-     <height>431</height>
+     <height>461</height>
     </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>20</y>
+      <x>190</x>
+      <y>30</y>
       <width>181</width>
       <height>28</height>
      </rect>
@@ -64,7 +70,8 @@ font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">
-border-color: rgb(0, 0, 0);</string>
+border-color: rgb(0, 0, 0);
+padding-left: 10px</string>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -119,7 +126,8 @@ border-color: rgb(0, 0, 0);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">
-border-color: rgb(0, 0, 0);</string>
+border-color: rgb(0, 0, 0);
+padding-left: 10px;</string>
     </property>
     <property name="editable">
      <bool>false</bool>
@@ -137,8 +145,8 @@ border-color: rgb(0, 0, 0);</string>
    <widget class="QPushButton" name="button_next">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>340</y>
+      <x>180</x>
+      <y>350</y>
       <width>211</width>
       <height>41</height>
      </rect>

@@ -35,7 +35,7 @@ class MainWindows(QDialog):
         self.content = self.combo_type_content.currentText()
         next_page = NextPage(input_file)
         widget.addWidget(next_page)
-        widget.setFixedHeight(430)
+        widget.setFixedHeight(455)
         widget.setFixedWidth(550)
         widget.setCurrentIndex(widget.currentIndex()+1)
         return self.content
@@ -95,7 +95,7 @@ class NextPage(QDialog):
         data["strategy_config"]["file_type"] = file_type
         data["strategy_config"]["exporter"] = exporter
         data["conf_file"]["file_path"] = file_path
-        data["conf_file"]["page_number"] = 1
+        data["conf_file"]["page_number"] = 3
 
 
         return data
