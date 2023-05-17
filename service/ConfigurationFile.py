@@ -18,8 +18,10 @@ class ConfigurationFile(ISaver):
             },
             "file_config":{
                 "file_path": None,
+                "first_page": None,
+                "last_page": None,
+                "export_path": None,
                 "start_key": None,
-                "page_number": None,
                 "end_key": None
             }
         }

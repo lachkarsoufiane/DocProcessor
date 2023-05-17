@@ -11,6 +11,8 @@ from Processor import Processor
 
 class FileInformation(QDialog):
     
+    content :dict
+
     def __init__(self, input_file, widget):
         super(FileInformation, self).__init__()
         uic.loadUi("./views/FileType.ui", self)
@@ -42,9 +44,9 @@ class FileInformation(QDialog):
     def on_submit(self, input_file, widget):
         
         # Obtener el contenido del formulario
-        document_type = self.document_type.currentText().lower()
-        file_type = self.file_type.currentText().lower()
-        exporter = self.combo_export_format.currentText().lower()
+        document_type = self.document_type.currentText()
+        file_type = self.file_type.currentText()
+        exporter = self.combo_export_format.currentText()
 
         # Guardar el contenido en el fichero de configuración
         result_file = self.save_config_file(document_type, file_type, exporter)
@@ -52,7 +54,7 @@ class FileInformation(QDialog):
         # Abrir la seguiente ventana
         window = AdvancedInformation(input_file, result_file, widget)
         width = 560
-        height = 465
+        height = 560
         self.open_window(window, widget, width, height)
 
 

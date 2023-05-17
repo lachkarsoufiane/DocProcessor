@@ -10,11 +10,11 @@ class CreateStrategyFile():
     
     def create(config: dict):
         config = config['strategy_config']
-        file_type = CreateStrategyFile.find_reader(config['file_type'].lower())
+        file_type = CreateStrategyFile.find_reader(config['document_type'].lower())
+        splitter = CreateStrategyFile.find_splitter(config['file_type'].lower())
         exporter = CreateStrategyFile.find_printer(config['exporter'].lower())
-        splitter = CreateStrategyFile.find_splitter(config['file_kind'].lower())
 
-        return PossibleStrategy(file_type, splitter, exporter)
+        return PossibleStrategy(file_type, exporter)
     
     def find_reader(key: str):
         switch = {
