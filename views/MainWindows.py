@@ -31,11 +31,14 @@ class MainWindows(QDialog):
         # Obtener el contenido del Combo Box 
         self.content = self.combo_type_content.currentText()
 
+        # Preparar la ventana
         window = FileInformation(input_file, widget)
-        width = 550
-        height = 455
+        width = 555
+        height = 500
+
         # Abrir la seguiente ventana
         self.open_window(window, widget,  width, height)
+        
         return self.content
     
     

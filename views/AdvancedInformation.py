@@ -16,13 +16,16 @@ class AdvancedInformation(QDialog):
         self.content = input_file["archivo"]
 
 
-        self.combo_file_types = self.findChild(QComboBox, 'file_types')
+        self.file_path = self.findChild(QTextEdit, 'file_path')
+        self.file_button = self.findChild(QPushButton, 'file_button')
+        self.first_page = self.findChildren(QTextEdit, 'first_page')
 
         self.button_next = self.findChild(QPushButton, 'button_next')
         self.button_back = self.findChild(QPushButton, 'button_back')
 
-        self.add_content(self.combo_file_types, 'file_kind', self.content)
 
+        # self.document_type.activated.connect(lambda: self.empty_text_field(self.file_path))
+        self.file_button.clicked.connect(self.file_navigation)
         self.button_next.clicked.connect(lambda: self.on_submit(result_file))
         self.button_back.clicked.connect(lambda: self.get_back(widget))
 
@@ -32,14 +35,17 @@ class AdvancedInformation(QDialog):
         for content in input_file[key]:
             element.addItem(content)
     
-    def on_submit(self, result_file):
-        file_kind = self.combo_file_types.currentText().lower()
-        if file_kind == "dscc":
-            start_key = "Document:"
 
-        result_file["strategy_config"]["file_kind"] = file_kind
-        result_file["conf_file"]["start_key"] = start_key
-        Processor(result_file)
+    def file_navigation(self):
+        # input = self.document_type.currentText()
+        # extention = '*.' + self.content["document_type"][input]
+        filename, filter = QFileDialog.getOpenFileName(parent=self, caption='Importar Fichero', directory='.', filter="*.pdf")
+        if filename:
+            self.file_path.setText(filename)
+
+    def on_submit(self, result_file):
+        pass
+        # Processor(result_file)
 
     def get_back(self, widget):
         widget.setFixedHeight(455)

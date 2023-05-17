@@ -4,18 +4,18 @@
 				"Api"
     ],
 	"archivo":{
-		"file_type": {
+		"document_type": {
 			"PDF" : "pdf",
 			"Excel" : "xlsx",
 			"Texto" : "txt"
 	},
 		"file_path": "",
 		"export_format" : [
-			"Excel",
 			"Consola",
-			"Texto"
+			"Texto",
+			"Excel"
 		],
-		"file_kind": [
+		"file_type": [
 			"ESCC",
 			"DSCC"
 		]

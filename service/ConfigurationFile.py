@@ -12,11 +12,11 @@ class ConfigurationFile(ISaver):
     def create_file() -> dict:
         file = {
             "strategy_config": {
+                "document_type": None,
                 "file_type": None,
-                "file_kind": None,
                 "exporter": None
             },
-            "conf_file":{
+            "file_config":{
                 "file_path": None,
                 "start_key": None,
                 "page_number": None,
@@ -35,6 +35,18 @@ class ConfigurationFile(ISaver):
         except:
             return False
         
+    
+    def modify_file (file :dict, content :dict, root :str) -> dict:
+        
+        content = content[root]
+
+        try:
+            for key in content:
+                file[root][key] = content[key]
+            print(file)
+            return file 
+        except:
+            return None
 
     def import_file(path :str) -> dict:
         try:

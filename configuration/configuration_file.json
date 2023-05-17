@@ -1,1 +1,2 @@
-{"strategy_config": {"file_type": "pdf", "file_kind": null, "exporter": "consola"}, "conf_file": {"file_path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/DSCCFile.pdf", "start_key": null, "page_number": 3, "end_key": null}}
+{"strategy_config": {"document_type": "pdf", "file_type": "escc", "exporter": "consola"}, 
+"file_config": {"file_path": null, "start_key": null, "page_number": null, "end_key": null}}
