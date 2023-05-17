@@ -91,12 +91,13 @@ class FileInformation(QDialog):
         if not ConfigurationFile.check_structure(json_file, to_check):
             json_file = ConfigurationFile.create_file()
 
-
-        json_file["strategy_config"]["document_type"] = document_type
-        json_file["strategy_config"]["file_type"] = file_type
-        json_file["strategy_config"]["exporter"] = exporter
+        strategy_config = json_file["strategy_config"]
+        
+        strategy_config["document_type"] = document_type
+        strategy_config["file_type"] = file_type
+        strategy_config["exporter"] = exporter
 
         # Guardamos el fichero
         ConfigurationFile.save_file(json_file, json_path)
         
-        return json_file
+        return  strategy_config

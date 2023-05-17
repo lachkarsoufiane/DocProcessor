@@ -14,7 +14,7 @@ class AdvancedInformation(QDialog):
         super(AdvancedInformation, self).__init__()
         uic.loadUi("./views/AdvancedInformation.ui", self)
         self.content = input_file["archivo"]
-
+        print(result_file)
 
         self.file_path = self.findChild(QTextEdit, 'file_path')
         self.file_button = self.findChild(QPushButton, 'file_button')
