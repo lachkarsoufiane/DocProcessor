@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QComboBox, QPushButton, QDialog, QFileDialog, QTextEdit, QCheckBox
 from PyQt5 import QtCore, uic
 
+from service.Manager import Manager
 from service.ConfigurationFile import ConfigurationFile
 
 
@@ -81,7 +82,9 @@ class AdvancedInformation(QDialog):
 
         config_file = self.save_config_file(file_path, export_path, first_page, last_page)
         
-        Processor(config_file)
+        Manager(config_file)
+
+        # Processor(config_file)
 
 
     def get_back(self, widget):

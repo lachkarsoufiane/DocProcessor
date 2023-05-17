@@ -58,6 +58,15 @@ class ConfigurationFile(ISaver):
         except:
             return None
     
+    def find_value (content :dict, key :str):
+        if key in content:
+            return content[key]
+        
+        for name in content:
+            if key in content[name]:
+                return content[name][key]
+        return None
+
     def check_structure(content :dict, must_have :list) -> bool:
         for key in must_have:
             if key not in content:
