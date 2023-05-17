@@ -8,7 +8,8 @@ class PossibleStrategy(IStrategy):
     printer :IPrinter
     splitter :ISplitter
 
-    def __init__(self, reader :IReader,  printer :IPrinter) :
+    def __init__(self, reader :IReader, splitter :ISplitter, printer :IPrinter) :
         self.reader = reader
+        self.splitter = splitter
         self.printer = printer
         

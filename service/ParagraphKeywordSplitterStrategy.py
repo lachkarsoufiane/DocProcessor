@@ -5,9 +5,11 @@ class ParagraphKeywordSplitterStrategy(ISplitter):
 
     def split_content(content :str, config :dict):
 
-        config = config["conf_file"]
+        config = config["file_config"]
+
         start_keyword = config["start_key"]
         end_keyword = config["end_key"]
+
         end_keyword = start_keyword if end_keyword is None else end_keyword
 
         result = {}

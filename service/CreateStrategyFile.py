@@ -14,7 +14,7 @@ class CreateStrategyFile():
         splitter = CreateStrategyFile.find_splitter(config['file_type'].lower())
         exporter = CreateStrategyFile.find_printer(config['exporter'].lower())
 
-        return PossibleStrategy(file_type, exporter)
+        return PossibleStrategy(file_type, splitter, exporter)
     
     def find_reader(key: str):
         switch = {
@@ -23,6 +23,7 @@ class CreateStrategyFile():
         }
         return switch.get(key, PDFTextReaderStrategy)
 
+    
     def find_splitter(key: str):
         switch = {
             "escc" : ParagraphRegexSplitterStrategy,

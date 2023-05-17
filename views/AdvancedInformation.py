@@ -71,6 +71,9 @@ class AdvancedInformation(QDialog):
         if self.all_pages.isChecked():
             first_page = None
             last_page = None 
+        elif self.last_page.toPlainText() ==  "":
+            first_page = int(self.first_page.toPlainText())
+            last_page = None
         else:
             first_page = int(self.first_page.toPlainText())
             last_page = int(self.last_page.toPlainText())
@@ -85,6 +88,7 @@ class AdvancedInformation(QDialog):
         widget.setFixedHeight(455)
         widget.setFixedWidth(550)
         widget.setCurrentIndex(widget.currentIndex()-1)
+
 
 
     def save_config_file(self, file_path :str, export_path :str, first_page :int, last_page :int):

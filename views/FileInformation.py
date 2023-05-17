@@ -95,9 +95,15 @@ class FileInformation(QDialog):
 
         strategy_config = json_file["strategy_config"]
         
+        file_config = json_file["file_config"]
+        if (file_type.lower() == "dscc"):
+            file_config["start_key"] = "Document:"
+
         strategy_config["document_type"] = document_type
         strategy_config["file_type"] = file_type
         strategy_config["exporter"] = exporter
+
+
 
         # Guardamos el fichero
         ConfigurationFile.save_file(json_file, json_path)
