@@ -19,5 +19,5 @@ class PDFTextReaderStrategy(IReader):
             pages.append(file_config['first_page'])
         
         for page in pages:
-            content += file.pages[page -1].extract_text()
+            content += "\n"+ file.pages[page -1].extract_text()
         return content
