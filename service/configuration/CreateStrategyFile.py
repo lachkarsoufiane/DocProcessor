@@ -1,9 +1,9 @@
-from service.ConsolePrinterStrategy import ConsolePrinterStrategy
-from service.FilePrinterStrategy import FilePrinterStrategy
-from service.ConsoleReaderStrategy import ConsoleReaderStrategy
-from service.PDFTextReaderStrategy import PDFTextReaderStrategy
-from service.ParagraphRegexSplitterStrategy import ParagraphRegexSplitterStrategy
-from service.ParagraphKeywordSplitterStrategy import ParagraphKeywordSplitterStrategy
+from service.printer.ConsolePrinterStrategy import ConsolePrinterStrategy
+from service.printer.FilePrinterStrategy import FilePrinterStrategy
+from service.reader.ConsoleReaderStrategy import ConsoleReaderStrategy
+from service.reader.PDFTextReaderStrategy import PDFTextReaderStrategy
+from service.splitter.ParagraphRegexSplitterStrategy import ParagraphRegexSplitterStrategy
+from service.splitter.ParagraphKeywordSplitterStrategy import ParagraphKeywordSplitterStrategy
 from strategy.PossibleStrategy import PossibleStrategy
 
 class CreateStrategyFile():

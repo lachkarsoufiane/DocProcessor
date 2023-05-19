@@ -1,8 +1,8 @@
-from PyQt5.QtWidgets import QComboBox, QPushButton, QDialog, QFileDialog, QTextEdit
+from PyQt5.QtWidgets import QComboBox, QPushButton, QDialog
 from PyQt5 import QtCore, uic
 
 from views.AdvancedInformation import AdvancedInformation
-from service.ConfigurationFile import ConfigurationFile
+from service.configuration.ConfigurationFile import ConfigurationFile
 
 
 from Processor import Processor

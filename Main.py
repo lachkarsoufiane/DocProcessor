@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QApplication
 from PyQt5 import QtWidgets
 from views.MainWindows import MainWindows
-from service.ConfigurationFile import ConfigurationFile
+from service.configuration.ConfigurationFile import ConfigurationFile
 import sys
 import json
 

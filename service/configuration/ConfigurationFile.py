@@ -20,14 +20,17 @@ class ConfigurationFile(ISaver):
                 "file_path": None,
                 "first_page": None,
                 "last_page": None,
-                "export_path": None,
+                "export_path": None
+            },
+            "process_config":
+            {
                 "start_key": None,
                 "end_key": None
             }
         }
         return file
 
-    
+
     def save_file(content :dict, file_path :str = None) -> bool:
         try:
             if file_path == None : file_path = "./configuration/configuration_file.json"
@@ -37,7 +40,7 @@ class ConfigurationFile(ISaver):
         except:
             return False
         
-    
+
     def modify_file (file :dict, content :dict, root :str) -> dict:
         
         content = content[root]
@@ -50,6 +53,7 @@ class ConfigurationFile(ISaver):
         except:
             return None
 
+
     def import_file(path :str) -> dict:
         try:
             with open(path) as json_file:
@@ -58,6 +62,7 @@ class ConfigurationFile(ISaver):
         except:
             return None
     
+
     def find_value (content :dict, key :str):
         if key in content:
             return content[key]
@@ -67,11 +72,13 @@ class ConfigurationFile(ISaver):
                 return content[name][key]
         return None
 
+
     def check_structure(content :dict, must_have :list) -> bool:
         for key in must_have:
             if key not in content:
                 return False
         return True
-    
+
+
     def check_existence(file_path :str) -> bool:
         return path.exists(file_path)

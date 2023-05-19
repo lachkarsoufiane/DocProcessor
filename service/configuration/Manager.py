@@ -1,4 +1,3 @@
-from service.ConfigurationFile import ConfigurationFile
 from Processor import Processor
 import re
 

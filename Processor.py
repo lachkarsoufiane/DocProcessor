@@ -1,6 +1,4 @@
-from interface.IStrategy import IStrategy
-from service.CreateStrategyFile import CreateStrategyFile
-import re
+from service.configuration.CreateStrategyFile import CreateStrategyFile
 
 class Processor():
     strategy: CreateStrategyFile
