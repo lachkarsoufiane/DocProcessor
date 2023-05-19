@@ -1,0 +1,6 @@
+{
+    "escc":
+    {
+        "title": "re.compile(r'[A-Z][a-zA-Z -]+(?=:$)')"
+    }
+}

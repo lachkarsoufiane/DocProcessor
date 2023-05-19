@@ -1,5 +1,6 @@
-from PyQt5.QtWidgets import QComboBox, QPushButton, QApplication, QDialog
-from PyQt5 import QtCore, uic
+from PyQt5.QtWidgets import QComboBox, QPushButton, QDialog
+from PyQt5 import uic
+from service.configuration.Manager import Manager
 
 from views.FileInformation import FileInformation
 

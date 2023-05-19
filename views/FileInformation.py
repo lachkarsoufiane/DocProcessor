@@ -15,7 +15,7 @@ class FileInformation(QDialog):
 
     def __init__(self, input_file, widget):
         super(FileInformation, self).__init__()
-        uic.loadUi("./views/FileType.ui", self)
+        uic.loadUi("./views/interface/FileType.ui", self)
         self.content = input_file["archivo"]
 
 
@@ -85,7 +85,7 @@ class FileInformation(QDialog):
         json_path = "./configuration/configuration_file.json"
         json_file = ConfigurationFile.import_file(json_path)
 
-        to_check = ["strategy_config", "file_config"]
+        to_check = ["strategy_config", "file_config", "process_config"]
         
         if not ConfigurationFile.check_existence(json_path):
             json_file = ConfigurationFile.create_file()

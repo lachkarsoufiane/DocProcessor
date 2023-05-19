@@ -13,7 +13,7 @@ class AdvancedInformation(QDialog):
     
     def __init__(self, input_file, result_file, widget):
         super(AdvancedInformation, self).__init__()
-        uic.loadUi("./views/AdvancedInformation.ui", self)
+        uic.loadUi("./views/interface/AdvancedInformation.ui", self)
         self.content = input_file["archivo"]
 
         options = self.content["document_type"]

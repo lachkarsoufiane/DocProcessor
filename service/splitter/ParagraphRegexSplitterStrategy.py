@@ -2,7 +2,14 @@ from interface.ISplitter import ISplitter
 import json
 
 class ParagraphRegexSplitterStrategy(ISplitter):
-    def split_content(content, start, end = None):
+    def split_content(content, config):
+
+        config = config["process_config"]
+        start = config["start_key"]
+        end = config["end_key"]
+
+        print(start)
+
         end = start if end is None else end 
         paragraphs = {}
         paragraph = ""
