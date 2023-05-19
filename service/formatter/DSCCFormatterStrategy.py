@@ -1,19 +1,25 @@
 from interface.IFormatter import IFormatter
-import asset.Regex as Regex
+from service.configuration.ConfigurationFile import ConfigurationFile
+import re
 import json
 
 class DSCCFormatterStrategy(IFormatter):
     
     def format(content):
+        # Importar el contenido del fichero de assets
+        asset_file = ConfigurationFile.import_file("./asset/process_settings.json")
+        url_re = re.compile(r'%s' % asset_file["dscc"]["url"])
+        title_re = re.compile(r'%s' % asset_file["dscc"]["title"])
+
         # Deserializar el contenido
         content = json.loads(content)
         result = []
-        url_re = Regex.URL_RE
+        
         # Recorrer los parrafos del contenido
         for index in content:
             data = {}
             current_title = None
-            titles = Regex.DSCC_TITLES_RE.findall(content[index])
+            titles = title_re.findall(content[index])
             
             for line in content[index].split("\n"):
                 match_title = False

@@ -1,6 +1,16 @@
 {
     "escc":
     {
-        "title": "re.compile(r'[A-Z][a-zA-Z -]+(?=:$)')"
+        "title": "[A-Z][a-zA-Z -]+(?=:$))",
+        "manufacture": "[^ ,][a-zA-Z!@#$&()\\-`+\\’ ]+\\([a-zA-Z]+\\)",
+        "certificate": "\\d{2,3}[A-Z](?:[rev]{3}\\d)?(?=, )",
+        "extra": "(Extension|Revision): [a-zA-Z. ]+",
+        "revision":"rev\\d{1}"
+    },
+    "dscc":
+    {
+        "start_key":"Document: ",
+        "title":"[A-Z][a-zA-Z ]+(?=:)",
+        "url":"^https?:\/\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\/"
     }
 }

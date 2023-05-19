@@ -10,7 +10,6 @@ class ParagraphRegexSplitterStrategy(ISplitter):
         start = re.compile(r'%s' % config["start_key"])
         end = re.compile(r'%s' % config["end_key"])
 
-        print(start)
 
         end = start if end is None else end 
         paragraphs = {}
