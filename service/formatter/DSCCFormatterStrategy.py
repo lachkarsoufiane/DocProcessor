@@ -6,6 +6,7 @@ import json
 class DSCCFormatterStrategy(IFormatter):
     
     def format(content):
+        
         # Importar el contenido del fichero de assets
         asset_file = ConfigurationFile.import_file("./asset/process_settings.json")
         url_re = re.compile(r'%s' % asset_file["dscc"]["url"])
@@ -40,5 +41,4 @@ class DSCCFormatterStrategy(IFormatter):
             
             result.append(data)
         result = json.dumps(result)
-        print(result)
         return result
