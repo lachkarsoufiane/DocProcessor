@@ -1,4 +1,5 @@
 from interface.IFormatter import IFormatter
+import asset.Regex as Regex
 import json
 
 class DSCCFormatterStrategy(IFormatter):
