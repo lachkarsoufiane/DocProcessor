@@ -1,7 +1,6 @@
 from interface.IFormatter import IFormatter
 from collections import namedtuple
 import json
-import pandas as pd
 
 class TableDSCCFormatterStrategy(IFormatter):
     

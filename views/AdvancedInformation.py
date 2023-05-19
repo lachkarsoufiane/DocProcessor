@@ -60,7 +60,7 @@ class AdvancedInformation(QDialog):
 
     
     def save_navigation(self):
-        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Importar Fichero', directory='.', filter="*.txt")
+        filename, filter = QFileDialog.getSaveFileName(parent=self, caption='Importar Fichero', directory='.', filter="*.xlsx")
         if filename:
             self.save_path.setText(filename)
 

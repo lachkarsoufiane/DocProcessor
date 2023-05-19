@@ -10,5 +10,7 @@ class Processor():
         # Leer el contenido del fichero requerido
         content = self.strategy.reader.read(config)
         paragraphs = self.strategy.splitter.split_content(content, config)
-        # Pintar el resultado
-        self.strategy.printer.print(paragraphs, config)
+        formated_content = self.strategy.formatter.format(paragraphs)
+        table_formate = self.strategy.table_formatter.format(formated_content)
+        # Exportar el resultado
+        self.strategy.exporter.export(table_formate, config)

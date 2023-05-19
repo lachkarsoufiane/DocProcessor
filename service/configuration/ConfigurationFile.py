@@ -40,6 +40,11 @@ class ConfigurationFile(ISaver):
         except:
             return False
         
+        
+    def add_configuration (file :dict, content :dict, key) -> dict:
+        file[key] = content[key]
+        return file
+    
 
     def modify_file (file :dict, content :dict, root :str) -> dict:
         

@@ -40,4 +40,5 @@ class DSCCFormatterStrategy(IFormatter):
             
             result.append(data)
         result = json.dumps(result)
+        print(result)
         return result

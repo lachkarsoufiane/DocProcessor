@@ -1,5 +1,5 @@
 from interface.IExporter import IExporter
-from service.ConfigurationFile import ConfigurationFile
+from service.configuration.ConfigurationFile import ConfigurationFile
 
 from pathlib import Path
 import pandas as pd
@@ -20,7 +20,7 @@ class ExcelExportStrategy(IExporter):
         try:
             with pd.ExcelWriter(export_path, mode = mode_type, if_sheet_exists=sheet ) as writer:
                 df = pd.DataFrame(table)
-                df.to_excel(writer, sheet_name="test")
+                df.to_excel(writer, sheet_name="pagina")
         except Exception as e:
             print(e)
             return False
