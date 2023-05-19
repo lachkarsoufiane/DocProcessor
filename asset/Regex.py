@@ -1,12 +1,14 @@
 import re
 
-TITLE_RE = re.compile(r'[A-Z][a-zA-Z -]+(?=:$)')
+TITLE_RE = "[A-Z][a-zA-Z -]+(?=:$)"
 
 MANUFACTURE_RE = re.compile(r'[^ ,][a-zA-Z!@#$&()\\-`+\’ ]+\([a-zA-Z]+\)')
 
 CERTIFICATE_RE = re.compile(r'\d{2,3}[A-Z](?:[rev]{3}\d)?(?=, )')
 
-EXTRA_RE = re.compile(r'(Extension|Revision): [a-zA-Z. ]+')
+EXTRA_RE = "(Extension|Revision): [a-zA-Z. ]+"
+
+EXTRA_RE1 = re.compile(r'(Extension|Revision): [a-zA-Z. ]+')
 
 REVISION_RE = re.compile(r'rev\d{1}')
 

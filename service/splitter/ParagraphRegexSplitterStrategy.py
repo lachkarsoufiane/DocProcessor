@@ -1,12 +1,14 @@
 from interface.ISplitter import ISplitter
+import re
 import json
 
 class ParagraphRegexSplitterStrategy(ISplitter):
     def split_content(content, config):
 
         config = config["process_config"]
-        start = config["start_key"]
-        end = config["end_key"]
+        
+        start = re.compile(r'%s' % config["start_key"])
+        end = re.compile(r'%s' % config["end_key"])
 
         print(start)
 
