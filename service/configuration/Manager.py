@@ -1,7 +1,4 @@
 from Processor import Processor
-# from views.MainWindows import MainWindows
-# from views.FileInformation import FileInformation
-# from views.AdvancedInformation import AdvancedInformation
 from service.configuration.ConfigurationFile import ConfigurationFile
 
 
@@ -15,28 +12,11 @@ class Manager():
     def __init__(self, configuration_file) -> None:
 
         self.process_settings = ConfigurationFile.import_file("./asset/process_settings.json")
-        # self.form_content = form_content
-        # self.filter_form(form_content)
         self.configuration_file = configuration_file
         self.strategy_config = configuration_file["strategy_config"]
         self.process_config = configuration_file["process_config"]
         self.add_keys()
         self.run(configuration_file)
-
-
-    # def filter_form(self, form_content): 
-    #     try:
-    #         for key in form_content:
-    #             switch = {
-    #                 "content_type" : FileInformation,
-    #                 "strategy_config" : AdvancedInformation,
-    #                 "file_config" : "",
-    #             }
-    #             return switch.get(key, MainWindows)
-    #     except:
-    #         return MainWindows()
-    
-
 
 
     def add_keys(self):

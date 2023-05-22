@@ -1,21 +1,18 @@
 from interface.IFormatter import IFormatter
 from service.formatter.ServiceESCC import ServiceESCC
-from service.configuration.ConfigurationFile import ConfigurationFile
 
 import re
 import json
 
 class ESCCFormatter (IFormatter):
 
-    def format(content) -> str:
+    def format(content, config) -> str:
 
-         # Importar el contenido del fichero de assets
-        asset_file = ConfigurationFile.import_file("./asset/process_settings.json")
-        escc_settings = asset_file["escc"]
+         # Importar el contenido del config
+        escc_settings = config["process_config"]["escc"]
         certificate_re = re.compile(r'%s' % escc_settings["certificate"])
         manufacturer_re = re.compile(r'%s' % escc_settings["manufacture"])
         extra_re = re.compile(r'%s' % escc_settings["extra"])
-
 
 
         content = json.loads(content)

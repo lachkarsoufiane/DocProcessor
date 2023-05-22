@@ -38,5 +38,6 @@ class ParagraphKeywordSplitterStrategy(ISplitter):
                 result[index] = paragraph
             
         result = json.dumps(result)
+       
         
         return result

@@ -1,16 +1,15 @@
 from interface.IFormatter import IFormatter
-from service.configuration.ConfigurationFile import ConfigurationFile
 import re
 import json
 
 class DSCCFormatterStrategy(IFormatter):
     
-    def format(content):
+    def format(content, config):
         
         # Importar el contenido del fichero de assets
-        asset_file = ConfigurationFile.import_file("./asset/process_settings.json")
-        url_re = re.compile(r'%s' % asset_file["dscc"]["url"])
-        title_re = re.compile(r'%s' % asset_file["dscc"]["title"])
+        escc_settings = config["process_config"]["dscc"]
+        url_re = re.compile(r'%s' % escc_settings["url"])
+        title_re = re.compile(r'%s' % escc_settings["title"])
 
         # Deserializar el contenido
         content = json.loads(content)

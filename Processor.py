@@ -8,9 +8,14 @@ class Processor():
         self.strategy = CreateStrategyFile.create(config)
 
         # Leer el contenido del fichero requerido
+        print("Leyendo el documento...")
         content = self.strategy.reader.read(config)
+        print("Cortando el contenido...")
         paragraphs = self.strategy.splitter.split_content(content, config)
-        formated_content = self.strategy.formatter.format(paragraphs)
+        print("Formateando el contenido...")
+        formated_content = self.strategy.formatter.format(paragraphs, config)
+        print("Creando la tabla...")
         table_formate = self.strategy.table_formatter.format(formated_content)
         # Exportar el resultado
+        print("Exportando el resultado...")
         self.strategy.exporter.export(table_formate, config)

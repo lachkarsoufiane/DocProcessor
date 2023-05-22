@@ -18,7 +18,7 @@ class ParagraphRegexSplitterStrategy(ISplitter):
         content_list = content.split("\n")
         
         for i, line in enumerate(content_list):
-            
+
             # Si estamos en la ultima linea
             if(i == len(content_list)-1 or end.match(line)):
                 paragraphs[current_title] = paragraph
@@ -30,12 +30,11 @@ class ParagraphRegexSplitterStrategy(ISplitter):
                 current_title = line
             
             if(start.match(line)):
-                current_title = line.replace(":", "")
+                current_title = re.search(start, line).group(1)
                 paragraphs[current_title] = {}
             
             if(current_title and not start.match(line)):
                 paragraph += line + " \n"
 
         result = json.dumps(paragraphs)
-        
         return result

@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QComboBox, QPushButton, QDialog
 from PyQt5 import uic
-from service.configuration.Manager import Manager
 from views.FileInformation import FileInformation
 
 
@@ -16,11 +15,10 @@ class MainWindows(QDialog):
         # Definir widgets
         self.combo_type_content = self.findChild(QComboBox, 'combo_type_content')
         self.button_next = self.findChild(QPushButton, 'button_next')
-
         
         self.add_content(self.combo_type_content, "content_type", input_file)
         self.button_next.clicked.connect(lambda: self.on_submit(input_file, widget))
-
+        
         # Mostrar la app
         self.show()
         
@@ -29,7 +27,6 @@ class MainWindows(QDialog):
     def add_content(self, element :object, key, input_file):
         for content in input_file[key]:
             element.addItem(content)
-
 
 
 
@@ -46,25 +43,6 @@ class MainWindows(QDialog):
         self.open_window(window, widget,  width, height)
         
         return self.content
-    
-    
-
-        
-    # def on_submit(self, input_file, widget):
-    #     # Obtener el contenido del formulario
-    #     content = self.get_content()
-        
-    #     Manager(content)
-
-    #     # Preparar la ventana
-    #     # window = FileInformation(input_file, widget)
-    #     # width = 555
-    #     # height = 500
-
-    #     # Abrir la seguiente ventana
-    #     # self.open_window(window, widget,  width, height)
-        
-       
     
 
     def get_content(self) -> dict:
