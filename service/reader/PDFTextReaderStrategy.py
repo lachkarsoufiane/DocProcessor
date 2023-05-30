@@ -4,8 +4,8 @@ import pdfplumber
 class PDFTextReaderStrategy(IReader):
 
     def read(config: dict) -> str:
-        file_config = config['file_config']
-        file = pdfplumber.open(file_config['file_path'])
+        file_config = config['reader_config']
+        file = pdfplumber.open(file_config['path'])
         pages = []
         content = ""
 

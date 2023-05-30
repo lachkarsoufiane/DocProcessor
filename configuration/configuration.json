@@ -11,10 +11,13 @@
         "line splitter",
         "specific splitter"
     ],
-    "formatter": [
+    "formater": [
         "keyword formatter",
         "regex formatter",
         "line formatter",
         "dictionary formatter"
+    ],
+    "exporter": [
+        "excel exporter"
     ]
 }

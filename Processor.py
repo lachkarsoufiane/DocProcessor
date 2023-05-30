@@ -14,8 +14,6 @@ class Processor():
         paragraphs = self.strategy.splitter.split_content(content, config)
         print("Formateando el contenido...")
         formated_content = self.strategy.formatter.format(paragraphs, config)
-        print("Creando la tabla...")
-        table_formate = self.strategy.table_formatter.format(formated_content)
         # Exportar el resultado
         print("Exportando el resultado...")
-        self.strategy.exporter.export(table_formate, config)
+        self.strategy.exporter.export(formated_content, config)

@@ -3,11 +3,25 @@
     "reader": "pdf reader",
     "splitter": "keyword paragraph splitter",
     "formatter": "regex formatter",
+    "exporter": "excel exporter",
+    "reader_config": {
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/DSCCFile.pdf",
+        "first_page": 1,
+        "last_page": null
+    },
     "splitter_config": {
         "start_key": "Document:",
         "end_key": null
     },
     "formatter_config": {
         "regex": "[A-Z][a-zA-Z ]+(?=:)"
+    },
+    "export_config": {
+        "columns": [
+            "Document",
+            "Description",
+            "URL"
+        ],
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/resultDscc.xlsx"
     }
 }

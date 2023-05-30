@@ -6,6 +6,7 @@ from service.splitter.ParagraphRegexSplitterStrategy import ParagraphRegexSplitt
 from service.splitter.ParagraphKeywordSplitterStrategy import ParagraphKeywordSplitterStrategy
 from service.formatter.DSCCFormatterStrategy import DSCCFormatterStrategy
 from service.formatter.ESCCFormatterStrategy import ESCCFormatter
+from service.formatter.RegexFormatterStrategy import RegexFormatterStrategy
 from service.table_formatter.TableESCCFormatterStrategy import TableESCCFormatterStrategy
 from service.table_formatter.TableDSCCFormatterStrategy import TableDSCCFormatterStrategy
 from service.exporter.ExcelExporterStrategy import ExcelExportStrategy
@@ -15,34 +16,33 @@ class CreateStrategyFile():
 
 
     def create(config: dict):
-        config = config['strategy_config']
-        file_type = CreateStrategyFile.find_reader(config['document_type'].lower())
-        splitter = CreateStrategyFile.find_splitter(config['file_type'].lower())
-        formatter = CreateStrategyFile.find_formatter(config['file_type'].lower())
-        table_formatter = CreateStrategyFile.find_tabe_formatter(config['file_type'].lower())
-        exporter = CreateStrategyFile.find_printer(config['exporter'].lower())
+        file_type = CreateStrategyFile.find_reader(config['reader'].lower())
+        splitter = CreateStrategyFile.find_splitter(config['splitter'].lower())
+        formatter = CreateStrategyFile.find_formatter(config['formatter'].lower())
+        # table_formatter = CreateStrategyFile.find_tabe_formatter(config['table_formatter'].lower())
+        exporter = CreateStrategyFile.find_exporter(config['exporter'].lower())
 
-        return PossibleStrategy(file_type, splitter, formatter, table_formatter, exporter)
+        return PossibleStrategy(file_type, splitter, formatter, exporter)
     
     def find_reader(key: str):
         switch = {
-            "text" : ConsoleReaderStrategy,
-            "pdf" : PDFTextReaderStrategy
+            "text reader" : ConsoleReaderStrategy,
+            "pdf reader" : PDFTextReaderStrategy
         }
         return switch.get(key, PDFTextReaderStrategy)
 
     
     def find_splitter(key: str):
         switch = {
-            "escc" : ParagraphRegexSplitterStrategy,
-            "dscc": ParagraphKeywordSplitterStrategy
+            "regex paragraph splitter" : ParagraphRegexSplitterStrategy,
+            "keyword paragraph splitter": ParagraphKeywordSplitterStrategy
         }
         return switch.get(key, None)
     
     def find_formatter(key: str):
         switch = {
-            "escc" : ESCCFormatter,
-            "dscc": DSCCFormatterStrategy 
+            "dictionary formatter" : ESCCFormatter,
+            "regex formatter": RegexFormatterStrategy 
         }
         return switch.get(key, None)
     
@@ -53,7 +53,7 @@ class CreateStrategyFile():
         }
         return switch.get(key, None)
 
-    def find_printer(key: str):
+    def find_exporter(key: str):
         switch = {
             "consola" : ConsolePrinterStrategy,
             "texto" : FilePrinterStrategy,
