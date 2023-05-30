@@ -1,0 +1,13 @@
+{
+    "name": "dscc",
+    "reader": "pdf reader",
+    "splitter": "keyword paragraph splitter",
+    "formatter": "regex formatter",
+    "splitter_config": {
+        "start_key": "Document:",
+        "end_key": null
+    },
+    "formatter_config": {
+        "regex": "[A-Z][a-zA-Z ]+(?=:)"
+    }
+}

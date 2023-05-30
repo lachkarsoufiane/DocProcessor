@@ -35,7 +35,7 @@ class CreateStrategyFile():
     def find_splitter(key: str):
         switch = {
             "escc" : ParagraphRegexSplitterStrategy,
-            "dscc": ParagraphKeywordSplitterStrategy 
+            "dscc": ParagraphKeywordSplitterStrategy
         }
         return switch.get(key, None)
     

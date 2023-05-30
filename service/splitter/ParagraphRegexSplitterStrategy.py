@@ -36,5 +36,6 @@ class ParagraphRegexSplitterStrategy(ISplitter):
             if(current_title and not start.match(line)):
                 paragraph += line + " \n"
 
+
         result = json.dumps(paragraphs)
         return result

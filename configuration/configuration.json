@@ -1,0 +1,20 @@
+{
+    "reader": [
+        "pdf reader",
+        "docx reader",
+        "text reader",
+        "api reader"
+    ],
+    "splitter": [
+        "keword paragraph splitter",
+        "regex paragraph splitter",
+        "line splitter",
+        "specific splitter"
+    ],
+    "formatter": [
+        "keyword formatter",
+        "regex formatter",
+        "line formatter",
+        "dictionary formatter"
+    ]
+}
