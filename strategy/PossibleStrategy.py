@@ -13,7 +13,6 @@ class PossibleStrategy(IStrategy):
     # table_formatter :IFormatter
     exporter :IExporter
 
-    # def __init__(self, reader :IReader, splitter :ISplitter, formatter :IFormatter, table_formatter :IFormatter, exporter :IExporter) :
     def __init__(self, reader :IReader, splitter :ISplitter, formatter :IFormatter, exporter :IExporter) :
         self.reader = reader
         self.splitter = splitter

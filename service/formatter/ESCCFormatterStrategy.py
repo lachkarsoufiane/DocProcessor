@@ -4,12 +4,12 @@ from service.formatter.ServiceESCC import ServiceESCC
 import re
 import json
 
-class ESCCFormatter (IFormatter):
+class ESCCFormatterStrategy (IFormatter):
 
     def format(content, config) -> str:
 
          # Importar el contenido del config
-        escc_settings = config["process_config"]["escc"]
+        escc_settings = config["formatter_config"]
         certificate_re = re.compile(r'%s' % escc_settings["certificate"])
         manufacturer_re = re.compile(r'%s' % escc_settings["manufacture"])
         extra_re = re.compile(r'%s' % escc_settings["extra"])

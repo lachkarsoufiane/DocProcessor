@@ -1,0 +1,33 @@
+{
+    "name": "escc",
+    "reader": "pdf reader",
+    "splitter": "key value splitter",
+    "formatter": "escc formatter",
+    "exporter": "excel exporter",
+    "reader_config": {
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/esccrpqpl005iss235.pdf",
+        "first_page": 3,
+        "last_page": null
+    },
+    "splitter_config": {
+        "key_regex": "(Extension with new Remark:|Extension with re-scope:|Editorial:|Removal:|Extension:|Revision:)\n",
+        "start_key": null,
+        "end_key": null
+    },
+    "formatter_config": {
+        "regex": "[A-Z][a-zA-Z ]+(?=:)",
+        "title": "(?:[0-9 ]+)?[A-Z][a-zA-Z -]+(?=:$)",
+        "manufacture": "[^ ,][a-zA-Z!@#$&()\\-`+\\\u2019 ]+\\([a-zA-Z]+\\)",
+        "certificate": "\\d{2,3}[A-Z](?:[rev]{3}\\d)?(?=, )",
+        "extra": "(Extension|Revision): [a-zA-Z. ]+",
+        "revision": "rev\\d{1}"
+    },
+    "export_config": {
+        "columns": [
+            "Document",
+            "Description",
+            "URL"
+        ],
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/resultESCC.xlsx"
+    }
+}

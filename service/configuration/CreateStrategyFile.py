@@ -1,11 +1,10 @@
-from service.printer.ConsolePrinterStrategy import ConsolePrinterStrategy
-from service.printer.FilePrinterStrategy import FilePrinterStrategy
+
 from service.reader.ConsoleReaderStrategy import ConsoleReaderStrategy
 from service.reader.PDFTextReaderStrategy import PDFTextReaderStrategy
 from service.splitter.ParagraphRegexSplitterStrategy import ParagraphRegexSplitterStrategy
 from service.splitter.ParagraphKeywordSplitterStrategy import ParagraphKeywordSplitterStrategy
-from service.formatter.DSCCFormatterStrategy import DSCCFormatterStrategy
-from service.formatter.ESCCFormatterStrategy import ESCCFormatter
+from service.splitter.KeyValueSplitterStrategy import KeyValueSplitterStrategy
+from service.formatter.ESCCFormatterStrategy import ESCCFormatterStrategy
 from service.formatter.RegexFormatterStrategy import RegexFormatterStrategy
 from service.table_formatter.TableESCCFormatterStrategy import TableESCCFormatterStrategy
 from service.table_formatter.TableDSCCFormatterStrategy import TableDSCCFormatterStrategy
@@ -34,6 +33,7 @@ class CreateStrategyFile():
     
     def find_splitter(key: str):
         switch = {
+            "key value splitter" : KeyValueSplitterStrategy,
             "regex paragraph splitter" : ParagraphRegexSplitterStrategy,
             "keyword paragraph splitter": ParagraphKeywordSplitterStrategy
         }
@@ -41,7 +41,7 @@ class CreateStrategyFile():
     
     def find_formatter(key: str):
         switch = {
-            "dictionary formatter" : ESCCFormatter,
+            "escc formatter" : ESCCFormatterStrategy,
             "regex formatter": RegexFormatterStrategy 
         }
         return switch.get(key, None)
@@ -55,8 +55,6 @@ class CreateStrategyFile():
 
     def find_exporter(key: str):
         switch = {
-            "consola" : ConsolePrinterStrategy,
-            "texto" : FilePrinterStrategy,
             "excel" : ExcelExportStrategy
         }
         return switch.get(key, ExcelExportStrategy)

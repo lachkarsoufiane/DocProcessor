@@ -1,2 +1,2 @@
 <h1>To Do</h1>
-<p>Añadir la opción de añadir nueva strategiay guardarla en el fichero de configuración.</p>
+<p>Añadir exceptions y checkers para validar el output de cada etapa.</p>
