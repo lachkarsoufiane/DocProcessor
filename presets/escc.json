@@ -5,7 +5,7 @@
     "formatter": "escc formatter",
     "exporter": "excel exporter",
     "reader_config": {
-        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/esccrpqpl005iss235.pdf",
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/esccrpqpl005iss234_jan_23.pdf",
         "first_page": 3,
         "last_page": null
     },
@@ -23,11 +23,6 @@
         "revision": "rev\\d{1}"
     },
     "export_config": {
-        "columns": [
-            "Document",
-            "Description",
-            "URL"
-        ],
-        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/resultESCC.xlsx"
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/esccrpqpl005iss234_jan_23.xlsx"
     }
 }
