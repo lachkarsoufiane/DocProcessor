@@ -3,7 +3,7 @@
     "reader": "pdf reader",
     "splitter": "key value splitter",
     "formatter": "escc formatter",
-    "exporter": "excel exporter",
+    "exporter": "json exporter",
     "reader_config": {
         "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/esccrpqpl005iss234_jan_23.pdf",
         "first_page": 3,
@@ -23,6 +23,6 @@
         "revision": "rev\\d{1}"
     },
     "export_config": {
-        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/esccrpqpl005iss234_jan_23.xlsx"
+        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/escc.json"
     }
 }

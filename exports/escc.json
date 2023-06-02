@@ -1,0 +1,51 @@
+[
+    {
+        "Certificate": "241L",
+        "Revision": "",
+        "Action": "Extension",
+        "Manifacturer": "Exxelia Magnetics (France)",
+        "Description": ""
+    },
+    {
+        "Certificate": "304F",
+        "Revision": "",
+        "Action": "Extension",
+        "Manifacturer": "WL Gore (Germany)",
+        "Description": ""
+    },
+    {
+        "Certificate": "305F",
+        "Revision": "",
+        "Action": "Extension",
+        "Manifacturer": "WL Gore (Germany)",
+        "Description": ""
+    },
+    {
+        "Certificate": "344C",
+        "Revision": "",
+        "Action": "Extension",
+        "Manifacturer": "STM (France)",
+        "Description": ""
+    },
+    {
+        "Certificate": "167K",
+        "Revision": "",
+        "Action": "Extension with re-scope",
+        "Manifacturer": "REL STPI (France)",
+        "Description": "Added new variants: ESCC 3602/009 variants 5 and 15"
+    },
+    {
+        "Certificate": "368A",
+        "Revision": "rev1",
+        "Action": "Revision",
+        "Manifacturer": "STM (France)",
+        "Description": "Added new variants with SnPb finishes (Q4): ESCC 5106/023 variants 05 and 06"
+    },
+    {
+        "Certificate": "369A",
+        "Revision": "rev1",
+        "Action": "Revision",
+        "Manifacturer": "STM (France)",
+        "Description": "Added new variants with SnPb finishes (Q4): ESCC 5103/032 variants 02 and ESCC5103/033 variants 04"
+    }
+]

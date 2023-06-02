@@ -6,9 +6,8 @@ from service.splitter.ParagraphKeywordSplitterStrategy import ParagraphKeywordSp
 from service.splitter.KeyValueSplitterStrategy import KeyValueSplitterStrategy
 from service.formatter.ESCCFormatterStrategy import ESCCFormatterStrategy
 from service.formatter.RegexFormatterStrategy import RegexFormatterStrategy
-from service.table_formatter.TableESCCFormatterStrategy import TableESCCFormatterStrategy
-from service.table_formatter.TableDSCCFormatterStrategy import TableDSCCFormatterStrategy
-from service.exporter.ExcelExporterStrategy import ExcelExportStrategy
+from service.exporter.ExcelExporterStrategy import ExcelExporterStrategy
+from service.exporter.JsonExporterStrategy import JsonExporterStrategy
 from strategy.PossibleStrategy import PossibleStrategy
 
 class CreateStrategyFile():
@@ -18,7 +17,6 @@ class CreateStrategyFile():
         file_type = CreateStrategyFile.find_reader(config['reader'].lower())
         splitter = CreateStrategyFile.find_splitter(config['splitter'].lower())
         formatter = CreateStrategyFile.find_formatter(config['formatter'].lower())
-        # table_formatter = CreateStrategyFile.find_tabe_formatter(config['table_formatter'].lower())
         exporter = CreateStrategyFile.find_exporter(config['exporter'].lower())
 
         return PossibleStrategy(file_type, splitter, formatter, exporter)
@@ -46,15 +44,10 @@ class CreateStrategyFile():
         }
         return switch.get(key, None)
     
-    def find_tabe_formatter(key :str):
-        switch = {
-            "escc" : TableESCCFormatterStrategy,
-            "dscc": TableDSCCFormatterStrategy 
-        }
-        return switch.get(key, None)
-
     def find_exporter(key: str):
         switch = {
-            "excel" : ExcelExportStrategy
+            "excel exporter" : ExcelExporterStrategy,
+            "json exporter" : JsonExporterStrategy,
+
         }
-        return switch.get(key, ExcelExportStrategy)
+        return switch.get(key, JsonExporterStrategy)

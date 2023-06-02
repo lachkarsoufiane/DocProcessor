@@ -9,43 +9,6 @@ class ConfigurationFile(ISaver):
         pass
 
 
-    def create_file() -> dict:
-        file = {
-            "strategy_config": {
-                "document_type": None,
-                "file_type": None,
-                "exporter": None
-            },
-            "file_config":{
-                "file_path": None,
-                "first_page": None,
-                "last_page": None,
-                "export_path": None
-            },
-            "process_config":
-            {
-                "start_key": None,
-                "end_key": None,
-
-                "escc": 
-                {
-                    "title": "(?:[0-9]+ )?([A-Z][a-zA-Z -]+(?=:$))",
-                    "manufacture": "[^ ,][a-zA-Z!@#$&()\\-`+\\’ ]+\\([a-zA-Z]+\\)",
-                    "certificate": "\\d{2,3}[A-Z](?:[rev]{3}\\d)?(?=, )",
-                    "extra": "(Extension|Revision): [a-zA-Z. ]+",
-                    "revision":"rev\\d{1}"
-                },
-                "dscc":
-                {
-                    "start_key":"Document: ",
-                    "title":"[A-Z][a-zA-Z ]+(?=:)",
-                    "url":"^https?:\/\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\/"
-                }
-            }
-        }
-        return file
-
-
     def save_file(content :dict, file_path :str = None) -> bool:
         try:
             if file_path == None : file_path = "./configuration/configuration_file.json"

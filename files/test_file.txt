@@ -1,0 +1,2 @@
+Here, all the elements in the list are individual string, so we can use the join function directly. 
+Note that each element in the new string is delimited with a single space.

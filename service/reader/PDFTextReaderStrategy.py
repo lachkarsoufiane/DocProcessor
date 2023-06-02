@@ -37,9 +37,9 @@ class PDFTextReaderStrategy(IReader):
             for page in pages:
                 content += f"\n{file.pages[page - 1].extract_text()}"
         except IndexError:
-            raise Exception("El numero de la pagina no existe en el fichero.")
+            raise Exception("Al leer el fichero. La pagina no existe en el fichero.")
         except Exception as e:
-            raise Exception("Error al recorrer las paginas del fichero: ", e)
+            raise Exception("Al leer el fichero: ", e)
         file.close()
         
         return content
