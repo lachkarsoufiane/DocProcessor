@@ -6,7 +6,7 @@ class PDFTextReaderStrategy(IReader):
     def read(config: dict) -> str:
         pages = []
         content = ""
-
+        # Ententar leer el fichero de configuraci'on 
         try:
             file_config = config['reader_config']
             file_path = file_config['path']
@@ -17,13 +17,13 @@ class PDFTextReaderStrategy(IReader):
         except Exception as e:
             raise Exception("Error al leer el contenedo del fichero de configuración: ", e)
         
-        
+        # Abrir el documento
         try:
             file = pdfplumber.open(file_path)
         except:
             raise Exception("Error al abrir el fichero.")
 
-
+        # Leer depende de las paginas determinadas por el usuario
         try:                 
             if last_page:
                 for i in range((first_page), last_page+1):

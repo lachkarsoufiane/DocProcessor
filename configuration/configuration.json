@@ -18,6 +18,7 @@
         "dictionary formatter"
     ],
     "exporter": [
-        "excel exporter"
+        "excel exporter",
+        "json exporter"
     ]
 }

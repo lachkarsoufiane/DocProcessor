@@ -1,0 +1,20 @@
+{
+    "readers": [
+        "pdf reader",
+        "console reader",
+        "text reader"
+    ],
+    "splitters": [
+        "key value splitter",
+        "keyword paragraph splitter",
+        "regex paragraph splitter"
+    ],
+    "formatear": [
+        "regex formatter",
+        "escc formatter"
+    ],
+    "exporter": [
+        "excel exporter",
+        "json exporter"
+    ]
+}
