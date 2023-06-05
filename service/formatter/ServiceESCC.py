@@ -14,10 +14,6 @@ class ServiceESCC():
     # Obtener la description del certificado specificado
     def get_certificate_description(paragraph, certificate, certificate_re, stop_re=None):
 
-        # Importar el regex del certificado
-        # certificate_re = re.compile(
-        #     r'%s' % config["formatter_config"]["certificate"])
-
         found = False
         stop_looking = None
         end_certificate = None
