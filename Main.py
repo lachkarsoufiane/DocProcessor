@@ -1,12 +1,11 @@
-from service.configuration.ConfigurationFile import ConfigurationFile
 from Processor import Processor
+import json
 
 if __name__ == "__main__":
-    
-    # Importar el fichero de opciones
+
+    # Importar el fichero de configuración
     json_path = "presets/escc.json"
-    json_content = ConfigurationFile.import_file(json_path)
+    with open(json_path) as conf_file:
+        configuration = json.load(conf_file)
 
-    Processor(json_content)
-
-
+    Processor(configuration)
