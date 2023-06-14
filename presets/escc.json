@@ -23,6 +23,6 @@
         "revision": "rev\\d{1}"
     },
     "export_config": {
-        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/escc.json"
+        "path": "exports/escc.json"
     }
 }

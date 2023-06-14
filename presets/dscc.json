@@ -17,6 +17,6 @@
         "regex": "[A-Z][a-zA-Z ]+(?=:)"
     },
     "export_config": {
-        "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/exports/resultDscc.xlsx"
+        "path": "exports/resultDSCC.xlsx"
     }
 }
