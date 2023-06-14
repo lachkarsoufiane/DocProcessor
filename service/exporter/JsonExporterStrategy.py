@@ -8,7 +8,7 @@ class JsonExporterStrategy(IExporter):
         
 
         try:
-            config = config["export_config"]
+            config = config["exporter_config"]
             export_path = config["path"]
         except KeyError:
             raise Exception("Se ha ocurrido un error al leer el parte de exportar en la configuracion.")

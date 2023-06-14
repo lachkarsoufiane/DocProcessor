@@ -1,22 +1,22 @@
 {
-    "name": "dscc",
     "reader": "pdf",
     "splitter": "kps",
     "formatter": "rf",
-    "exporter": "ex",
+    "exporter": "jx",
+    "name": "test2",
     "reader_config": {
         "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/DSCCFile.pdf",
-        "first_page": null,
-        "last_page": null
+        "first_page": "",
+        "last_page": ""
     },
     "splitter_config": {
         "start_key": "Document:",
-        "end_key": null
+        "end_key": ""
     },
     "formatter_config": {
         "regex": "[A-Z][a-zA-Z ]+(?=:)"
     },
     "exporter_config": {
-        "path": "exports/resultDSCC.xlsx"
+        "path": "exports/dscc.json"
     }
 }

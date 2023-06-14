@@ -1,0 +1,48 @@
+{
+    "reader": {
+        "pdf": "leer pdf",
+        "text": "leer fichero de texto"
+    },
+    "splitter": {
+        "kws": "cortar por clave y valor",
+        "kps": "cortar parrafos por palabras claves",
+        "rps": "cortar parrafos por expreciones regulares"
+    },
+    "formatter": {
+        "rf": "formatear por exprición regular"
+    },
+    "exporter": {
+        "ex": "exportar a un fichero excel",
+        "jx": "exportar a un json"
+    },
+    "config": {
+        "text": {
+            "path": "ruta del fichero de texto"
+        },
+        "pdf": {
+            "path": "ruta donde esta el fichero",
+            "first_page": "primera página",
+            "last_page": "ultima página"
+        },
+        "kws": {
+            "key_regex": "regex de la clave"
+        },
+        "kps": {
+            "start_key": "clave de inicio",
+            "end_key": "clave del final"
+        },
+        "rps": {
+            "start_key": "regex del inicio",
+            "end_key": "regex del final"
+        },
+        "rf": {
+            "regex": "regex del clave"
+        },
+        "ex": {
+            "path": "ruta de exportar"
+        },
+        "jx": {
+            "path": "ruta de exportar"
+        }
+    }
+}

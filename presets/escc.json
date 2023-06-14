@@ -1,9 +1,9 @@
 {
     "name": "escc",
-    "reader": "pdf reader",
-    "splitter": "key value splitter",
-    "formatter": "escc formatter",
-    "exporter": "json exporter",
+    "reader": "pdf",
+    "splitter": "kvs",
+    "formatter": "esccf",
+    "exporter": "jx",
     "reader_config": {
         "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/esccrpqpl005iss234_jan_23.pdf",
         "first_page": 3,
@@ -22,7 +22,7 @@
         "extra": "(Extension|Revision): [a-zA-Z. ]+",
         "revision": "rev\\d{1}"
     },
-    "export_config": {
+    "exporter_config": {
         "path": "exports/escc.json"
     }
 }

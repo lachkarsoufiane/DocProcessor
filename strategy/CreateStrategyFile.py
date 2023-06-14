@@ -10,44 +10,44 @@ from service.exporter.ExcelExporterStrategy import ExcelExporterStrategy
 from service.exporter.JsonExporterStrategy import JsonExporterStrategy
 from strategy.PossibleStrategy import PossibleStrategy
 
-class CreateStrategyFile():
 
+class CreateStrategyFile():
 
     def create(config: dict):
         file_type = CreateStrategyFile.find_reader(config['reader'].lower())
         splitter = CreateStrategyFile.find_splitter(config['splitter'].lower())
-        formatter = CreateStrategyFile.find_formatter(config['formatter'].lower())
+        formatter = CreateStrategyFile.find_formatter(
+            config['formatter'].lower())
         exporter = CreateStrategyFile.find_exporter(config['exporter'].lower())
 
         return PossibleStrategy(file_type, splitter, formatter, exporter)
-    
+
     def find_reader(key: str):
         switch = {
-            "text reader" : ConsoleReaderStrategy,
-            "pdf reader" : PDFTextReaderStrategy
+            "text": ConsoleReaderStrategy,
+            "pdf": PDFTextReaderStrategy
         }
         return switch.get(key, PDFTextReaderStrategy)
 
-    
     def find_splitter(key: str):
         switch = {
-            "key value splitter" : KeyValueSplitterStrategy,
-            "regex paragraph splitter" : ParagraphRegexSplitterStrategy,
-            "keyword paragraph splitter": ParagraphKeywordSplitterStrategy
+            "kvs": KeyValueSplitterStrategy,
+            "rps": ParagraphRegexSplitterStrategy,
+            "kps": ParagraphKeywordSplitterStrategy
         }
         return switch.get(key, None)
-    
+
     def find_formatter(key: str):
         switch = {
-            "escc formatter" : ESCCFormatterStrategy,
-            "regex formatter": RegexFormatterStrategy 
+            "esccf": ESCCFormatterStrategy,
+            "rf": RegexFormatterStrategy
         }
         return switch.get(key, None)
-    
+
     def find_exporter(key: str):
         switch = {
-            "excel exporter" : ExcelExporterStrategy,
-            "json exporter" : JsonExporterStrategy,
+            "ex": ExcelExporterStrategy,
+            "jx": JsonExporterStrategy,
 
         }
         return switch.get(key, JsonExporterStrategy)
