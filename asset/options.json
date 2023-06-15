@@ -1,20 +1,19 @@
 {
-    "readers": [
-        "pdf reader",
-        "console reader",
-        "text reader"
-    ],
-    "splitters": [
-        "key value splitter",
-        "keyword paragraph splitter",
-        "regex paragraph splitter"
-    ],
-    "formatear": [
-        "regex formatter",
-        "escc formatter"
-    ],
-    "exporter": [
-        "excel exporter",
-        "json exporter"
-    ]
+    "readers": {
+        "pdf": "pdf reader",
+        "text": "text file reader"
+    },
+    "splitters": {
+        "kvs": "key value splitter",
+        "kps": "keyword paragraph splitter",
+        "rps": "regex paragraph splitter"
+    },
+    "formatear": {
+        "rf": "regex formatter",
+        "ef": "escc formatter"
+    },
+    "exporter": {
+        "ex": "excel exporter",
+        "jx": "json exporter"
+    }
 }

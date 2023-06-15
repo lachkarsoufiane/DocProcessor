@@ -1,0 +1,22 @@
+{
+    "reader": "pdf",
+    "splitter": "kps",
+    "formatter": "rf",
+    "exporter": "jx",
+    "name": "fscc",
+    "reader_config": {
+        "path": "file.pdf",
+        "first_page": "2",
+        "last_page": ""
+    },
+    "splitter_config": {
+        "start_key": "Document:",
+        "end_key": ""
+    },
+    "formatter_config": {
+        "regex": "[A-Z][a-z]*"
+    },
+    "exporter_config": {
+        "path": "fscc.json"
+    }
+}
