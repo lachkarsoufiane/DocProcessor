@@ -11,8 +11,19 @@ class PDFTextReaderStrategy(IReader):
         try:
             file_config = config['reader_config']
             file_path = file_config['path']
-            first_page = file_config['first_page']
-            last_page = file_config['last_page']
+            first = file_config['first_page']
+            last = file_config['last_page']
+
+            # convertir el numero de página a un intero si no es.
+            first_page = int(first) if (
+                first is not None and isinstance(
+                    first, str) and first.isdigit()
+            ) else first
+
+            last_page = int(last) if (last is not None and isinstance(
+                last, str) and last.isdigit()
+            ) else last
+
         except KeyError:
             raise Exception(
                 "La configuracion no contiene la información suficiente.")

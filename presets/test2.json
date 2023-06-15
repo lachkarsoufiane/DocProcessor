@@ -2,7 +2,7 @@
     "reader": "pdf",
     "splitter": "kps",
     "formatter": "rf",
-    "exporter": "jx",
+    "exporter": "ex",
     "name": "test2",
     "reader_config": {
         "path": "C:/Users/beca_is3/Desktop/Files/Python/File Processor/ProcessorWithViews/files/DSCCFile.pdf",
@@ -17,6 +17,6 @@
         "regex": "[A-Z][a-zA-Z ]+(?=:)"
     },
     "exporter_config": {
-        "path": "exports/dscc.json"
+        "path": "exports/dscc.xlsx"
     }
 }
